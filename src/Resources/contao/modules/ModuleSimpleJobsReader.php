@@ -30,7 +30,7 @@ class ModuleSimpleJobsReader extends Module {
 
             $objTemplate = new BackendTemplate('be_wildcard');
 
-            $objTemplate->wildcard = '##' . $GLOBALS['TL_LANG']['MOD']['simplejobsreader'][0] . '##';
+            $objTemplate->wildcard = '##' . $GLOBALS['TL_LANG']['FMD']['simplejobsreader'][0] . '##';
             $objTemplate->title = $this->headline;
             $objTemplate->id = $this->id;
             $objTemplate->link = $this->name;
@@ -81,8 +81,16 @@ class ModuleSimpleJobsReader extends Module {
 			$objPage->pageTitle = strip_tags(\StringUtil::stripInsertTags($jobPosting->getTitle()));
 		}
 
-        $postingTemplate->setData($jobPosting->getTemplateData());
+        $postingTemplate->setData($jobPosting->getTemplateData(true));
 
+        $postingTemplate->enclosure = array();
+
+        // Add enclosures
+        if ($jobPostingModel->addEnclosure)
+        {
+            $this->addEnclosuresToTemplate($postingTemplate, $jobPostingModel->row());
+        }
+        
         $this->Template->posting = $postingTemplate->parse();
 
     }
