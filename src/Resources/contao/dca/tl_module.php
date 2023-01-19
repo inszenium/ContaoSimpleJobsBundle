@@ -1,14 +1,9 @@
 <?php
 
 // Add palettes to tl_module
-<<<<<<< HEAD
-$GLOBALS['TL_DCA']['tl_module']['palettes']['simplejobslist']   = '{title_legend},name,headline,type;{config_legend},simplejobs_organisations,numberOfItems;{template_legend:hide},simplejobs_postingtemplate,customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID';
-=======
+
 $GLOBALS['TL_DCA']['tl_module']['palettes']['__selector__'][] = 'simplejobs_addCategoryFilter';
-
 $GLOBALS['TL_DCA']['tl_module']['palettes']['simplejobslist'] = '{title_legend},name,headline,type;{config_legend},simplejobs_organisations,simplejobs_hardlimit,simplejobs_addCategoryFilter;{template_legend:hide},simplejobs_postingtemplate,customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID';
-
->>>>>>> JanoschOltmanns/master
 $GLOBALS['TL_DCA']['tl_module']['palettes']['simplejobsreader'] = '{title_legend},name,headline,type;{config_legend},simplejobs_organisations,simplejobs_addstructureddata;{template_legend:hide},simplejobs_postingtemplate,customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID';
 $GLOBALS['TL_DCA']['tl_module']['palettes']['simplejobsfilter'] = '{title_legend},name,headline,type;{config_legend},simplejobs_organisations;{template_legend:hide},simplejobs_filtertemplate,customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID';
 
